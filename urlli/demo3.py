@@ -8,4 +8,5 @@ headers = { 'User-Agent' : user_agent }
 data = urllib.urlencode(values)  
 request = urllib2.Request(url, data, headers)  
 response = urllib2.urlopen(request)  
+print response.getcode()
 page = response.read()
