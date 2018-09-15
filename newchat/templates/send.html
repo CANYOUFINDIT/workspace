@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+    <form  id="fm">
+        <input type="text" name="to" placeholder="联系人">
+        <input type="text" name="content" placeholder="内容">
+        <button onclick="send_msg();">提交</button>
+    </form>
+  
+    <script>
+        function send_msg() {
+            $.ajax({
+                url:'/send_msg',
+                data:$('#fm').serialize(),
+                type:'POST',
+                dataType:'JSON',
+                success:function (arg) {
+                    if (arg.BaseResponse.Ret == 0){
+                        console.log('发送成功');
+                        $('#fm').find(':input').val('')
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

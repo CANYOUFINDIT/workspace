@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "workspace"
+    "liveServer.settings.multiRootWorkspaceName": "workspace",
+    "git.ignoreLimitWarning": true,
+    "python.jediEnabled": false
 }
